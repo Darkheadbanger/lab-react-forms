@@ -25,29 +25,29 @@ function App() {
   const handleGraduationYearInput = (event) => setGraduationYear(event.target.value);
   const handleGraduatedInput = (event) => setGraduated(event.target.checked);
   
-//   const handleSubmit = (event) => {
-//     email.preventDefault();
-//     const newStudent = {fullName, image, phone, email, program, graduationYear, graduated};
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const newStudent = {fullName, image, phone, email, program, graduationYear, graduated};
+    console.log("newStudent", newStudent)
+    setStudents([newStudent, ...students])
 
-//     // Add to array
+    // REfresh to the original values after added:
+    setFullName("");
+    setImage("");
+    setPhone("");
+    setEmail("");
+    setProgram("");
+    setGraduationYear(2023);
+    setGraduated(false);
 
-//     // REfresh to the original values after added:
-//     setFullName("")
-// setImage("")
-// setPhone("")
-// setEmail("")
-// setProgram("-- None --")
-// setGraduationYear(2023)
-// setGraduated(true)
-
-//   }
+  }
 
   return (
     <div className="App pt-20">
       <Navbar />
 
       {/* FORM */}
-      <form>
+      <form onSubmit={handleSubmit}>
         <span>Add a Student</span>
         <div>
           <label>

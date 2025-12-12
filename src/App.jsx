@@ -9,7 +9,13 @@ import studentsData from "./assets/students.json";
 function App() {
   const [students, setStudents] = useState(studentsData);
 
-
+  const [fullName, setFileName ] = useState("");
+  const [image, setImage ] = useState("");
+  const [phone, setPhone ] = useState("");
+  const [email, setEmail] = useState("");
+  const [program, setProgram] = useState("-- None --");
+  const [graduationYear, setGraduationYear] = useState(0);
+  const [graduated, setGraduated] = useState(false);
   return (
     <div className="App pt-20">
       <Navbar />
